@@ -1,13 +1,14 @@
 import log from "./logger"
 import MyController from "@controller/my"
-import  express, { Express, Request, Response } from "express"
+import express, { Express, Request, Response } from "express"
 
 const app: Express = express();
 const port = 3000;
 
 app.get("/", (req: Request, res: Response) => {
-    res.send("hello world");
-    log("hello");
+    res.send("hello foo");
+    log("hello foo");
+    log("hello world");
 })
 
 app.get("/my-endpoint", MyController.handleRequest);
