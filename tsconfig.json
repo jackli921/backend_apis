@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
     "target": "ES2020", // Or a target compatible with your Node.js version
-    "module": "ES2020", // Or "ESNext" if you are using .mjs
+    "module": "ESNext", // Or "ESNext" if you are using .mjs
     "outDir": "./dist", // Output directory for compiled JavaScript files
     "strict": true,
     "esModuleInterop": true,
@@ -11,10 +11,13 @@
     "paths": {
       "@controller/*": ["controllers/*"]
     },
-    
     "moduleResolution": "node",
     "noEmit": false,
   },
   "include": ["./src/**/*"], // Specify your TypeScript source files
-  "exclude": ["node_modules"]
+  "exclude": ["node_modules", "./*.ts"],
+  "ts-node": {
+    "esm": true
+  },
+  "allowImportingTsExtensions": true
 }
