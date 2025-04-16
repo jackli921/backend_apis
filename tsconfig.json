@@ -1,18 +1,28 @@
 {
   "compilerOptions": {
-    "target": "ES2020", // Or a target compatible with your Node.js version
-    "module": "ESNext", // Or "ESNext" if you are using .mjs
+    "target": "ES2022", // Or a target compatible with your Node.js version
+    "module": "ESNext", // Cannot use nodenext without breaking current style of imports
     "outDir": "./dist", // Output directory for compiled JavaScript files
     "strict": true,
+    // Prevents accessing an array or object without first checking if it's defined
+    "noUncheckedIndexedAccess": true,
+    // Helps with cjs and esm interop
     "esModuleInterop": true,
+    // By skipping the type checking of d.ts files, this allows TS to skip node_modules folder
+    // Enabling this makes TS only check your source files
     "skipLibCheck": true,
+    // This is needed to allow importing .js files
+    "allowJs": true,
+    // This is needed to allow importing .json files
+    "resolveJsonModule": true,
+    "isolatedModules": true,
     "forceConsistentCasingInFileNames": true,
     "baseUrl": "./src",
     "paths": {
       "@controller/*": ["controllers/*"]
     },
     "moduleResolution": "node",
-    "noEmit": false,
+    "noEmit": false
   },
   "include": ["./src/**/*"], // Specify your TypeScript source files
   "exclude": ["node_modules", "./*.ts"],
