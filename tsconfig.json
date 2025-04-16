@@ -1,33 +1,28 @@
 {
   "compilerOptions": {
-    "target": "ES2022", // Or a target compatible with your Node.js version
-    "module": "ESNext", // Cannot use nodenext without breaking current style of imports
-    "outDir": "./dist", // Output directory for compiled JavaScript files
-    "strict": true,
-    // Prevents accessing an array or object without first checking if it's defined
-    "noUncheckedIndexedAccess": true,
-    // Helps with cjs and esm interop
-    "esModuleInterop": true,
-    // By skipping the type checking of d.ts files, this allows TS to skip node_modules folder
-    // Enabling this makes TS only check your source files
-    "skipLibCheck": true,
-    // This is needed to allow importing .js files
-    "allowJs": true,
-    // This is needed to allow importing .json files
-    "resolveJsonModule": true,
-    "isolatedModules": true,
-    "forceConsistentCasingInFileNames": true,
-    "baseUrl": "./src",
-    "paths": {
-      "@controller/*": ["controllers/*"]
-    },
-    "moduleResolution": "node",
-    "noEmit": false
+      "target": "ES2022", // Specifies the JavaScript language version to compile to (here, ES2022)
+      "module": "ESNext", // Specifies the module code generation style (here, the latest standard)
+      "outDir": "./dist", // Output directory for compiled JavaScript files
+      "strict": true, // Enables all strict type-checking options for safer code
+      "noUncheckedIndexedAccess": true, // Prevents accessing an array or object without first checking if it's defined
+      "esModuleInterop": true, // Helps with cjs and esm interop by enabling compatibility between CommonJS and ES Modules
+      "skipLibCheck": true, // By skipping the type checking of d.ts files, this allows TS to skip node_modules folder, enabling this makes TS only check your source files
+      "allowJs": true, // This is needed to allow importing .js files into your TypeScript code
+      "resolveJsonModule": true, // This is needed to allow importing .json files as modules
+      "isolatedModules": true, // Ensures that each file can be safely transpiled without relying on global scope
+      "forceConsistentCasingInFileNames": true, // Prevents issues where different casing in file names can cause problems
+      "baseUrl": "./src", // Specifies the base directory to resolve non-absolute module names
+      "paths": {
+          "@controller/*": ["controllers/*"] // Allows you to create shorter, more readable import paths (e.g., importing from '@controller/...')
+      },
+      "types": ["mocha", "chai", "node"], // Include type definitions for Mocha (testing framework), Chai (assertion library), and Node.js
+      "moduleResolution": "node", // Specifies how TypeScript should resolve module imports (using Node.js style)
+      "noEmit": false // Instructs the compiler to generate output files (JavaScript files in the 'outDir')
   },
-  "include": ["./src/**/*"], // Specify your TypeScript source files
-  "exclude": ["node_modules", "./*.ts"],
+  "include": ["./src/**/*", "tests/**/*"], // Specifies the files and directories that the TypeScript compiler should include in the compilation
+  "exclude": ["node_modules", "./*.ts"], // Specifies the files and directories that the TypeScript compiler should exclude from the compilation
   "ts-node": {
-    "esm": true
+      "esm": true // Configures 'ts-node' (a tool to run TypeScript directly) to use ECMAScript Modules
   },
-  "allowImportingTsExtensions": true
+  "allowImportingTsExtensions": true // Allows you to import TypeScript files using their '.ts' extension in other TypeScript files
 }
