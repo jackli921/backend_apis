@@ -1,0 +1,21 @@
+name: CI
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '20'
+      - name: Install dependencies
+        run: npm install
+      - name: Build application with Webpack
+        run: npm run build
+      - name: Build Docker image
+        run: docker build -t express-api .
+      - name: Run tests
+        run: npm test
