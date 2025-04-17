@@ -1,5 +1,5 @@
 import { logger } from './logger';
-import MyController from '@controller/my';
+import { MyController } from '@controller/my';
 import express, { Express, NextFunction, Request, Response } from 'express';
 
 const app: Express = express();
