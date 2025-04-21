@@ -1,6 +1,6 @@
 import request from 'supertest';
 import express from 'express';
-import { MyController } from '../src/controllers/my';
+import { MyController } from '../src/controllers/user.controller';
 import { expect } from 'chai';
 
 const app = express();
