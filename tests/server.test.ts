@@ -1,20 +1,21 @@
 import request from 'supertest';
-import express from 'express';
-import { MyController } from '../src/controllers/user.controller';
 import { expect } from 'chai';
+import { createApp } from '../src/app';
+import {Express} from 'express';
 
-const app = express();
-const port = 3000;
 
-app.get('/', (req, res) => {
-    res.send('hello world');
-});
-
-app.get('/', MyController.handleRequest);
 describe('GET /', () => {
+    let app: Express;
+
+    before(() => {
+        app = createApp();
+    })
+    
     it('should return "hello world"', async () => {
         const res = await request(app).get('/');
         expect(res.statusCode).to.equal(200);
-        expect(res.text).to.equal('hello world');
+        expect(res.body).to.be.an('object');
+        expect(res.body.message).to.equal('hello world');
+        expect(res.type).to.equal('application/json');
     });
 });

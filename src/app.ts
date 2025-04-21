@@ -1,5 +1,5 @@
-import { requestLoggerMiddleware } from 'middlewares/requestLogger';
-import userRouter  from 'routes/user.routes';
+import { requestLoggerMiddleware } from './middlewares/requestLogger';
+import userRouter  from './routes/user.routes';
 import express, { Express, Request, Response, NextFunction } from 'express';
 import bodyParser from 'body-parser';
 
@@ -13,7 +13,7 @@ export function createApp(): Express {
     app.use('/api/v1/', userRouter);
 
     app.get('/', (req: Request, res: Response, next: NextFunction) => {
-        res.json({ message: 'Hello World' });
+    res.json({ message: 'hello world' });
     });
 
     return app;
