@@ -5,8 +5,7 @@
     "main": "index.js",
     "scripts": {
         "test": "npx webpack --config webpack.test.config.js && npx mocha dist/tests/bundle.test.js",
-        "build": "npx webpack -watch",
-        "start": "nodemon dist/bundle.js",
+        "build": "npx webpack",
         "dev": "npx tsx watch src/index.ts"
     },
     "keywords": [],
