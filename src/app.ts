@@ -1,4 +1,4 @@
-import { logger } from './logger';
+import { logger } from './utils/logger';
 import { MyController } from '@controller/my';
 import express, { Express, NextFunction, Request, Response } from 'express';
 
@@ -19,4 +19,3 @@ app.get('/', (req: Request, res: Response, next: NextFunction) => {
 });
 
 app.get('/my-endpoint', MyController.handleRequest);
-
