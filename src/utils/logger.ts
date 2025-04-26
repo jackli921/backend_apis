@@ -1,4 +1,5 @@
-export class logger {
+
+class Logger {
     info(...args: any[]) {
         const timestamp = new Date().toISOString();
         console.log(`[INFO] [${timestamp}]`, ...args);
@@ -14,3 +15,5 @@ export class logger {
         console.warn(`[WARN] [${timestamp}]`, ...args);
     }
 }
+
+export const logger = new Logger();

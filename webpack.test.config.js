@@ -8,7 +8,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 const testConfig = {
-  entry: "./tests/index.test.ts", // Specifies the main file where your tests will start
+  entry: "./tests/server.test.ts", // Specifies the main file where your tests will start
     output: {
       filename: "bundle.test.js",
       path: path.resolve(process.cwd(), "dist/tests"), // Determines the directory where the bundled test file will be saved (inside 'dist/tests')

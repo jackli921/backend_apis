@@ -6,7 +6,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 export default {
-    entry: './src/index.ts',
+    entry: './src/server.ts',
     mode: 'development', // Sets the build mode to 'development', which usually disables optimizations for easier debugging
     experiments: {
         outputModule: true, // Enables experimental support for outputting ECMAScript Modules
