@@ -11,6 +11,15 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: '20'
+      - name: Check Files and Paths
+        run: |
+          pwd # Print working directory
+          ls -la # List files in root
+          ls -la src/ # List files in src
+          echo "--- webpack.config.js ---"
+          cat webpack.config.js # Print webpack config content
+          echo "--- tsconfig.json ---"
+          cat tsconfig.json # Print tsconfig content
       - name: Install dependencies
         run: npm install
       - name: Build application with Webpack

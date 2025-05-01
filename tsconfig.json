@@ -13,7 +13,8 @@
       "forceConsistentCasingInFileNames": true, // Prevents issues where different casing in file names can cause problems
       "baseUrl": "./src", // Specifies the base directory to resolve non-absolute module names
       "paths": {
-          "@controller/*": ["controllers/*"] // Allows you to create shorter, more readable import paths (e.g., importing from '@controller/...')
+          "@controller/*": ["controllers/*"], // Allows you to create shorter, more readable import paths (e.g., importing from '@controller/...')
+          "@services/*":["services/*"],
       },
       "types": ["mocha", "chai", "node"], // Include type definitions for Mocha (testing framework), Chai (assertion library), and Node.js
       "moduleResolution": "node", // Specifies how TypeScript should resolve module imports (using Node.js style)
