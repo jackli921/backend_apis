@@ -4,7 +4,7 @@
     "description": "",
     "main": "index.js",
     "scripts": {
-        "test": "npx webpack --config webpack.test.config.js && npx mocha dist/tests/bundle.test.js",
+        "test": "npx webpack --config webpack.test.config.js && npx mocha 'dist/tests/**/*.test.js' ",
         "build": "npx webpack",
         "dev": "npx tsx watch src/server.ts"
     },
@@ -15,12 +15,10 @@
     "devDependencies": {
         "@types/chai": "^5.2.1",
         "@types/express": "^5.0.1",
-        "@types/jest": "^29.5.14",
         "@types/mocha": "^10.0.10",
         "@types/supertest": "^6.0.3",
         "chai": "^5.2.0",
         "clean-webpack-plugin": "^4.0.0",
-        "jest": "^29.7.0",
         "mocha": "^11.1.0",
         "nodemon": "^3.1.9",
         "prettier": "3.5.3",
@@ -36,7 +34,9 @@
     "dependencies": {
         "@types/apicache": "^1.6.7",
         "apicache": "^1.6.3",
-        "express": "^5.1.0"
+        "axios": "^1.9.0",
+        "express": "^5.1.0",
+        "express-rate-limit": "^7.5.0"
     },
     "prettier": {
         "singleQuote": true,

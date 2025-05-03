@@ -1,7 +1,7 @@
 import { NextFunction, Request, Response } from 'express';
 import { cacheControl } from '@services/cache';
 
-export class UserController {
+export default class UserController {
     public static createUser(req: Request, res: Response, next: NextFunction): void {
         console.log("creating users ... clearing cache")
         cacheControl.clear('/api/v1/users');
