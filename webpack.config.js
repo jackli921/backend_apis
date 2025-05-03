@@ -14,13 +14,15 @@ export default {
     output: {
         filename: 'bundle.js', // Sets the name of the output bundle file
         path: path.resolve(process.cwd(), 'dist'), // Determines the directory where the output bundle will be saved (inside 'dist')
-        module: true, // Indicates that the output should be treated as an ECMAScript Module (so no other config setting should use commonjs, or else not found errors occur during runtime)
+        module: true, // Indicates that the output should be trea
+        // ted as an ECMAScript Module (so no other config setting should use commonjs, or else not found errors occur during runtime)
 },
     target: 'node', // Specifies that the output code is intended to run in a Node.js environment
     resolve: {
         extensions: ['.ts', '.js'], // Tells Webpack which file extensions to consider when resolving modules
         alias: {
             '@controller': path.resolve(process.cwd(), 'src/controllers/'), // Creates an alias so you can use '@controller' in your imports to refer to the 'src/controllers' directory
+            '@services': path.resolve(process.cwd(), 'src/services/'),
         },
         extensionAlias: {
             '.js': ['.ts', '.js'], // Specifies that when resolving '.js' files, also consider '.ts' files first
