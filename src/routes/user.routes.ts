@@ -1,5 +1,5 @@
 import { Router } from 'express';
-import { UserController } from '@controller/user.controller';
+import UserController from '@controller/user.controller';
 import cacheMiddleware from '@services/cache';
 
 const userRouter = Router();
